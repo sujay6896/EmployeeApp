@@ -53,21 +53,6 @@ addEmployee(newEmployee)
   this.employees.push(newEmployee);
 }
 
-getEmployee()
-{
-
-  this.http.get(this.url) 
-  .subscribe(Response => {    
-    console.log(Response) 
-    this.li=Response; 
-    this.lis=this.li.list; 
-    return this.lis;
-  }); 
-
-
-
-
-}
 
   sendDataToEmployeeDetail(employeeDetails)
   {

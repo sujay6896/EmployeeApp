@@ -29,7 +29,7 @@
        </div>
     </div>
  </div>
- <input accept="image/*" formControlName="imageUrl" hidden type="file" #fileUploader (change)="showPriview($event)">
+
 </form>
 
 
@@ -58,7 +58,7 @@
       <input formControlName="currentLocation" type="text" placeholder="Enter current location" name="psw" required>
       <label for="psw"><b>Address</b></label>
       <input formControlName="address" type="text" placeholder="Enter Address" name="psw" required>
-    
+      <input accept="image/*" formControlName="image" hidden type="file" #fileUploader (change)="showPriview($event)">
       <!-- <webcam></webcam> -->
           
       <button (click)="onSubmit()" type="submit">Add Employee</button>

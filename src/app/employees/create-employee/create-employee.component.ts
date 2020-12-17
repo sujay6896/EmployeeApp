@@ -118,7 +118,7 @@ addImageFromCamera()
    
     this.addEmployeeForm=this.formbuilder.group({
    id:[],
-   imageUrl:new FormControl(''),
+   image:new FormControl(''),
       name:['',[Validators.minLength(3),Validators.required]],
       Email:['',[Validators.required,Validators.email]],
       phone:['',Validators.required],

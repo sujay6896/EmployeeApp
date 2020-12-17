@@ -5,6 +5,7 @@ import {EmployeeService} from '../../employee.service'
 import {HttpClient} from '@angular/common/http'; 
 import {AngularFireStorage} from "@angular/fire/storage"
 import  {map} from "rxjs/operators"
+import { NgxSpinnerService } from "ngx-spinner";
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -17,7 +18,7 @@ export class EmployeeListComponent implements OnInit {
   employeeHeader=['Id','Name','email Id','PhoneNumber'];
   employees;
 
-  constructor(private storage:AngularFireStorage,private EmployeeService:EmployeeService,private router:Router,private http : HttpClient) {
+  constructor(private spinner: NgxSpinnerService,private storage:AngularFireStorage,private EmployeeService:EmployeeService,private router:Router,private http : HttpClient) {
     // setTimeout(()=>{
     //   this.http
     //   .get('https://useremployee-6833e-default-rtdb.firebaseio.com/posts.json')
@@ -60,7 +61,7 @@ export class EmployeeListComponent implements OnInit {
  
 
   ngOnInit() {
-
+    this.spinner.show();
     setTimeout(()=>{
       this.http
       .get('https://useremployee-6833e-default-rtdb.firebaseio.com/posts.json')
@@ -75,6 +76,7 @@ export class EmployeeListComponent implements OnInit {
       }))
       .subscribe(listOfEmployees=>{
         this.employees=listOfEmployees
+        this.spinner.hide()
       });
     },2000)
    

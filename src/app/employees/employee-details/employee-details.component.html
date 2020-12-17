@@ -4,7 +4,7 @@
 <div class="card">
   
     <div class="cardBody">
-      <img [src]="employeeData.image" alt="Virat">
+      <img src="../../../assets/dummy-icon-male.jpg"alt="image">
      
       
     </div>
@@ -12,19 +12,19 @@
   </div>
 
   <div class="content">
-  <label for="fname">Employee Id</label>
-  <input type="text" id="fname" name="firstname" [value]="employeeData.id" placeholder="Your name..">
+  <label for="empId">Employee Id</label>
+  <input readonly type="text" id="empId" name="firstname" [value]="employeeData.id" placeholder="Your name..">
 
-  <label for="lname">Employee Name</label>
-  <input type="text" id="lname" name="lastname" [value]="employeeData.name" placeholder="Your last name..">
-  <label for="lname">Employee email Id</label>
-  <input type="text" id="lname" name="lastname" [value]="employeeData.Email" placeholder="Your last name..">
-  <label for="lname">Employee phone Number</label>
-  <input type="text" id="lname" name="lastname" [value]="employeeData.phone" placeholder="Your last name..">
-  <label for="lname">Data of birth</label>
-  <input type="text" id="lname" name="lastname" [value]="employeeData.DOB | date:short" placeholder="Your last name..">
-  <label for="lname">Address <address></address></label>
-  <input type="text" id="lname" name="lastname" [value]="employeeData.address" placeholder="Your last name..">
+  <label for="empName">Employee Name</label>
+  <input readonly type="text" id="empName" name="lastname" [value]="employeeData.name" placeholder="Your last name..">
+  <label for="empEmail">Employee email Id</label>
+  <input readonly type="text" id="empEmail" name="lastname" [value]="employeeData.Email" placeholder="Your last name..">
+  <label for="empPhone">Employee phone Number</label>
+  <input readonly type="text" id="empPhone" name="lastname" [value]="employeeData.phone" placeholder="Your last name..">
+  <label for="empDob">Data of birth</label>
+  <input readonly type="text" id="empDob" name="lastname" [value]="employeeData.DOB " placeholder="Your last name..">
+  <label for="empAddress">Address <address></address></label>
+  <input readonly type="text" id="empAddress" name="lastname" [value]="employeeData.address" placeholder="Your last name..">
 
   
 </div>
