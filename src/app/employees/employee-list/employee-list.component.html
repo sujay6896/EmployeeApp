@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="listMain">
+<table class="content-table">
+    <thead>
+        <tr>
+            <th *ngFor="let tableHeader of employeeHeader">{{tableHeader}}</th>       
+        </tr>
+    </thead>
+    <tbody>
+    <tr (click)="EmployeeSelected(tableValue)" *ngFor="let tableValue of employees">
+      <td >{{tableValue.id}}</td>
+      <td >{{tableValue.name}}</td>
+      <td >{{tableValue.Email}}</td>
+      <td >{{tableValue.phone}}</td>
+    </tr>
+   
+    </tbody>
+</table>
+</div>
+<app-footer></app-footer>

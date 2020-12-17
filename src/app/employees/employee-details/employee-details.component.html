@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+
+<div class="card">
+  
+    <div class="cardBody">
+      <img [src]="employeeData.image" alt="Virat">
+     
+      
+    </div>
+    <p> Employee Name: {{employeeData.name}}</p>
+  </div>
+
+  <div class="content">
+  <label for="fname">Employee Id</label>
+  <input type="text" id="fname" name="firstname" [value]="employeeData.id" placeholder="Your name..">
+
+  <label for="lname">Employee Name</label>
+  <input type="text" id="lname" name="lastname" [value]="employeeData.name" placeholder="Your last name..">
+  <label for="lname">Employee email Id</label>
+  <input type="text" id="lname" name="lastname" [value]="employeeData.Email" placeholder="Your last name..">
+  <label for="lname">Employee phone Number</label>
+  <input type="text" id="lname" name="lastname" [value]="employeeData.phone" placeholder="Your last name..">
+  <label for="lname">Data of birth</label>
+  <input type="text" id="lname" name="lastname" [value]="employeeData.DOB | date:short" placeholder="Your last name..">
+  <label for="lname">Address <address></address></label>
+  <input type="text" id="lname" name="lastname" [value]="employeeData.address" placeholder="Your last name..">
+
+  
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,76 @@
+<app-header></app-header>
+
+<div class="form">
+
+ 
+<div class="dropdown">
+  <button class="dropbtn">Add Image</button>
+  <div class="dropdown-content">
+    <a (click)="addImageFromCamera()">From Camera</a>
+    <a (click)="addImageFromGallery()">From Gallery</a>
+  </div>
+  <small [hidden]="errorMessage">Add the Image</small>
+</div>
+<form [formGroup]="formTemplate" >
+  <div class="imgcontainer" [hidden]="hideGallery">
+    <img  [src]="imgSrc" (click)="fileUploader.click()"  alt="Avatar" class="avatar">
+  </div>
+ 
+  <div class="container vh-100"  [hidden]="hideCamera">
+    <div class="d-flex flex-column align-items-center">
+       <div class="p-1">
+          <video #video class="vid" autoplay></video>
+       </div>
+       <div class="pb-2">
+          <button  class="btn btn-primary" (click)="capture()">Capture Image</button>
+       </div>
+       <div class="capturedImage" [hidden]="capturedImage">
+          <canvas #canvas class="vid"></canvas>
+       </div>
+    </div>
+ </div>
+ <input accept="image/*" formControlName="imageUrl" hidden type="file" #fileUploader (change)="showPriview($event)">
+</form>
+
+
+<form  [formGroup]="addEmployeeForm" >
+    
+
+  
+    <div class="container">
+      <label><b>Employee Name</b></label>
+      <input formControlName="name" type="text" placeholder="Enter Username" >
+      <small [hidden]="errorMessage"  >Name is require with min 3 character</small>
+     <br><br>
+      <label for="psw"><b>Email Id</b></label>
+      <input formControlName="Email" type="email" placeholder="Enter Email" name="psw" required>
+      <small [hidden]="errorMessage">Email Id is required</small>
+      <br><br>
+      <label for="psw"><b>Phone Number</b></label>
+      <input pattern="[1-9]{1}[0-9]{9}" maxlength="10" formControlName="phone" type="text" placeholder="Enter Phone Number" name="psw" required>
+      <small [hidden]="errorMessage">Phone No is required</small>
+      <br><br>
+      <label for="psw"><b>DOB</b></label>
+      <input formControlName="DOB" type="date" placeholder="Enter Date of birth" name="psw" required>
+      <small [hidden]="errorMessage">DOB is required</small>
+      <br><br>
+      <label for="psw"><b>Current Location</b></label>
+      <input formControlName="currentLocation" type="text" placeholder="Enter current location" name="psw" required>
+      <label for="psw"><b>Address</b></label>
+      <input formControlName="address" type="text" placeholder="Enter Address" name="psw" required>
+    
+      <!-- <webcam></webcam> -->
+          
+      <button (click)="onSubmit()" type="submit">Add Employee</button>
+
+
+   
+    
+     
+    </div>
+  </form>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+</div>
+<app-footer></app-footer>
