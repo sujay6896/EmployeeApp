@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +16,6 @@ import {AngularFireStorageModule} from "@angular/fire/storage"
 import {AngularFireDatabaseModule} from "@angular/fire/database"
 import {environment} from "../environments/environment"
 import { HttpClientModule } from '@angular/common/http';
-import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -37,14 +36,12 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ReactiveFormsModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    NgxSpinnerModule,
     AngularFireModule.initializeApp(environment.firebase),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCzsqssAAWOLi7Dw9VhnP_KamywRhzfLUU'
     })
     
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,5 @@
 <app-header></app-header>
 <div class="listMain">
-    
 <table class="content-table">
     <thead>
         <tr>
@@ -8,7 +7,6 @@
         </tr>
     </thead>
     <tbody>
-   
     <tr (click)="EmployeeSelected(tableValue)" *ngFor="let tableValue of employees">
       <td >{{tableValue.id}}</td>
       <td >{{tableValue.name}}</td>
@@ -19,7 +17,4 @@
     </tbody>
 </table>
 </div>
-
-  <p style="font-size: 20px; color: white">Loading...</p>
-
 <app-footer></app-footer>
